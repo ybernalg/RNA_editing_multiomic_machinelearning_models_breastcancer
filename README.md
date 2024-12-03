@@ -34,5 +34,3 @@ The primary objective of this project is to investigate the relationship between
    - Development of a **risk score** for therapy non-response based on features derived from the final machine learning model.
 
 ---
-
-Feel free to explore the repository for more details and code examples. For any questions or contributions, please refer to the [Contributing](#contributing) section below.
