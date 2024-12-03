@@ -14,7 +14,7 @@ In this study, we integrate multi-omics data with a particular focus on **A>I(G)
 ## Key Components of the Project
 
 ### 1. **Preprocessing**
-   - Data preparation and visualization for:
+   - Data preparation, characterization and visualization for:
      - Gene expression
      - RNA edited sites
      - Tumoral and germline DNA
