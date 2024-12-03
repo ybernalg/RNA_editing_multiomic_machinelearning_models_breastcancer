@@ -1,0 +1,42 @@
+# Load required libraries
+library(tidyr)
+library(dplyr)
+library(data.table)
+
+# Define working directory and input file
+setwd("path_to_input_directory/")
+reditools <- read.delim("path_to_input_file/BEAUTY107_master_table_biallelic_minimal.tsv")
+reditools <- as.data.table(reditools)
+
+# Identify columns containing base counts
+base_count_columns <- grep("BaseCount.A.C.G.T", names(reditools), value = TRUE)
+
+# Process base count columns
+for (col in base_count_columns) {
+  reditools[, paste0(col, "_Value") := sapply(get(col), function(counts) {
+    # Convert BaseCount[A,C,G,T] values to numeric
+    counts <- as.numeric(unlist(strsplit(gsub("\\[|\\]", "", counts), ",")))
+    # Handle values based on the Reference column
+    if (length(counts) == 4) {
+      if (Reference[1] == "A") {
+        return(counts[1] / (counts[1] + counts[3]))
+      } else if (Reference[1] == "T") {
+        return(counts[4] / (counts[4] + counts[2]))
+      } else {
+        return(NA)
+      }
+    } else {
+      return(NA)
+    }
+  })]
+}
+
+# Add Uploaded_variation column
+reditools[, Uploaded_variation := paste0(Region, "_", Position, 
+                                         ifelse(Reference == "A", "_A/G", 
+                                         ifelse(Reference == "T", "_T/C", "")))]
+
+# Remove unnecessary columns
+reditools <- reditools[, -c(1:324), with = FALSE]
+
+
