@@ -1,13 +1,38 @@
+# RNA Editing Multiomic Machine Learning Models for Breast Cancer
 
-RNA Editing Multiomic Machine Learning Models for Breast Cancer
-This repository contains the code and resources needed to reproduce analyses conducted as part of the research project focusing on A>I(G) RNA editing and its impact on the response to genotoxic drugs in breast cancer, leveraging multi-omics approaches and machine learning models.
+This repository contains the code and resources necessary to reproduce analyses conducted as part of a research project focusing on **A>I(G) RNA editing** and its impact on the response to genotoxic drugs in breast cancer. The study leverages multi-omics approaches and machine learning models to uncover key biological insights.
 
-Project Description
-The main objective of this project is to explore the relationship between RNA editing and therapy response in breast cancer patients. By integrating transcriptomic, genomic, and clinical data, machine learning models are developed to identify RNA editing patterns potentially linked to resistance or sensitivity to treatments.
+---
 
+## Project Description
 
-Key Components of the Project:
-- Preprocesing: gene expression, RNA edited sites, tumoral and germline DNA with their visualization.
-- Machine Learning Models: Implementation of classification models, including GLM, Random Forest, and SVM with LASSO and PCA strategies for selection of variables with differents omics combinations; and Performance metrics F1-score and AUC ROC curve.
-- Score of risk:  considering features from final model ML, we generate a score of risk of non-response to therapy. 
-  
+The primary objective of this project is to investigate the relationship between **RNA editing** and **therapy response** in breast cancer patients. By integrating **transcriptomic**, **genomic**, and **clinical data**, machine learning models are employed to identify RNA editing patterns potentially associated with treatment resistance or sensitivity.
+
+---
+
+## Key Components of the Project
+
+### 1. **Preprocessing**
+   - Data preparation and visualization for:
+     - Gene expression
+     - RNA edited sites
+     - Tumoral and germline DNA
+
+### 2. **Machine Learning Models**
+   - Implementation of various classification models, including:
+     - **Generalized Linear Models (GLM)**
+     - **Random Forest**
+     - **Support Vector Machines (SVM)**
+   - Feature selection strategies using:
+     - **LASSO**
+     - **Principal Component Analysis (PCA)**
+   - Performance evaluation through:
+     - **F1-score**
+     - **AUC ROC curve**
+
+### 3. **Risk Scoring**
+   - Development of a **risk score** for therapy non-response based on features derived from the final machine learning model.
+
+---
+
+Feel free to explore the repository for more details and code examples. For any questions or contributions, please refer to the [Contributing](#contributing) section below.
